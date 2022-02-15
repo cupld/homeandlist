@@ -1,18 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './components/Home';
 import React from 'react';
 import { NativeBaseProvider, Box } from 'native-base';
-// import ShopList from './components/ShopList';
-import ShopDetail from './components/Shop/ShopDetail';
+// import Home from './components/Home';
+import ShopList from './components/Shop/ShopList';
+// import ShopDetail from './components/Shop/ShopDetail';
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <View style={styles.container}>
       {/* <Home/> */}
-      {/* <ShopList/> */}
-      <ShopDetail/>
+      <ShopList/>
+      {/* <ShopDetail/> */}
       </View>
     </NativeBaseProvider>
     // <View style={styles.container}>

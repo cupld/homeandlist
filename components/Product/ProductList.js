@@ -6,7 +6,7 @@ const ProductList = ({products}) => {
   const productList = products.map((product) => <ProductItem key={product._id} product={product} /> )
   return (
     <View>
-      <Text>{product}</Text>
+      <Text>{productList}</Text>
     </View>
   )
 }

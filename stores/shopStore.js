@@ -1,3 +1,4 @@
+import axios from "axios";
 import { makeAutoObservable } from "mobx";
 import api from "../stores/api";
 
@@ -10,8 +11,9 @@ class ShopStore {
 
   fetchShops = async () => {
     try {
-      const res = await api.get("/shops");
+      const res = await axios.get("http://localhost:8000/api/shops");
       this.shops = res.data;
+      console.log("🚀 ~ file: shopStore.js ~ line 15 ~ ShopStore ~ fetchShops= ~ res.data", res.data)
       this.loading = false;
     } catch (error) {
       console.log(
