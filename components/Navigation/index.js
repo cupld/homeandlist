@@ -5,17 +5,34 @@ import { createStackNavigator } from '@react-navigation/stack'
 // Components Call:
 import Home from "../Home"
 import ShopList from "../Shop/ShopList"
-import ProductList from '../Product/ProductList'
+import ShopDetail from '../Shop/ShopDetail'
+import CartList from '../Cart/CartList'
+import CartIcon from '../Buttons/Cart'
 
 
 
 const index = () => {
     const { Navigator , Screen } = createStackNavigator();
   return (
-      <Navigator>
-          <Screen name="Home" component={Home} />
-          <Screen name="Shops" component={ShopList}/>
-          <Screen name="Products" component={ProductList}/>
+    <Navigator
+    initialRouteName="Home"
+    screenOptions={{
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "#90d4ed",
+      },
+      headerTitleStyle: {
+        fontWeight: "bold",
+      },
+ }}>
+          <Screen name="Home" component={Home} options={{
+        headerStyle:{backgroundColor:"yellow",
+        },
+        }}/>
+          <Screen name="Shops" component={ShopList} options={{headerRight: () => <CartIcon/>}}/>
+          <Screen name="ShopDetail" component={ShopDetail} options={({route}) => ({headerTitle: route.params.shop.name})}/>
+          {/* <Screen name="Products" component={ProductList}/> */}
+          <Screen name="Cart" component={CartList} />
       </Navigator>
   )
 }
