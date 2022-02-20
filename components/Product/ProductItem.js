@@ -24,7 +24,9 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <View>
+    <View
+      style={{ height: "40%", alignItems: "center", justifyContent: "center" }}
+    >
       <Image
         style={styles.shopDetailImage}
         source={{ uri: baseURL + product.image }}

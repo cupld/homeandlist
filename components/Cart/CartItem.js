@@ -7,6 +7,7 @@ import cartStore from "../../stores/cartStore";
 import Icon from "react-native-vector-icons/EvilIcons";
 
 const CartItem = ({ item }) => {
+  console.log("🚀 ~ file: CartItem.js ~ line 10 ~ CartItem ~ item", item);
   const handleAdd = () => {
     const newItem = { quantity, item };
     cartStore.addItemToCart(newItem);
